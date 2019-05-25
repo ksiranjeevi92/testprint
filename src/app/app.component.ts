@@ -623,7 +623,7 @@ data1 =  {
    };
 
 constructor() {
-  for(let i = 0; i<= 1000; i++) {
+  for(let i = 0; i<= 1; i++) {
     this.printData.push(this.data1);
   }
 }
@@ -822,11 +822,10 @@ ${this.printData.map((item, i) => `
 `;
     }
 
-var myWindow = window.open("", "BarCode Print");
- myWindow.document.write(printTemplate);
+  var myWindow = window.open("", "BarCode Print");
+   myWindow.document.write(printTemplate);
 setTimeout(() => {
-
-  // myWindow.print();
+  myWindow.print();
   // myWindow.close();
 });
 return false;
