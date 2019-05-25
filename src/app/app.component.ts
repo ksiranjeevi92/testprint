@@ -726,9 +726,10 @@ ${this.printData.map((item, i) => `
   ${funcCode128B(item.boxCode)}
      	<div id="container" class="container" style="width: 92mm;">
   
-		<div id="header" style="height: 22mm;display: table">
+		<div id="header" style="height: 22mm;display: table; width: 100%">
       ${item.flowers.map((item2, i) => `
-       <div style="display: table-row;overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">
+       <div style="display: table-row;overflow: hidden; text-overflow: ellipsis;
+       white-space: nowrap;font-family: Arial;">
        <div style="display: table-cell;width: 20%">${item2.baseUoMCode}</div>
        <div style="display: table-cell;width: 65%">${item2.description}</div>
        <div style="display: table-cell;width: 15%">${item2.color}</div>
@@ -739,21 +740,21 @@ ${this.printData.map((item, i) => `
 
 
 
-		<div id="barcode" style="height: 20mm;display: table">
-    <div style="display: table-row">
-    <div style="table-cell;width: 86%">
-    <div style="table-column">
+		<div id="barcode" style="height: 20mm;display: table;width: 100%;">
+    <div style="display: table-row;width: 100%">
+    <div style="table-cell;border-spacing: 0">
+    <div style="table-column; font-family: Arial Black">
     <span>${genBarcode(strRaw, 6, 50)}</span>
     </div>
     <div style="table-column">
-    STRING
+    <span>${item.boxCode}</span>
     </div>
     </div>
 
-    <div style="display: table-cell;width: 16%;overflow: hidden;
+    <div style="display: table-cell;overflow: hidden;border-spacing: 0;
      text-overflow: ellipsis;
-     white-space: nowrap;">
-     ordercode12
+     white-space: nowrap;font-family: microsoft yahei">
+     ${item.orderReference}
      </div>
 
     </div>
