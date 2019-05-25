@@ -9,9 +9,9 @@ export class AppComponent  {
 
   codeType = '';
 
-  printData = [];
 
-   data = [  
+
+   printData = [  
    {  
       "boxId":2,
       "boxCode":"BPLUNRMI000002",
@@ -618,14 +618,36 @@ data1 =  {
             "baseUoMCode":"STEM",
             "packQuantity":5,
             "baseQuantity":50
+         },
+           {  
+            "boxFlowerId":71,
+            "itemCode":"F100002",
+            "description":"ROSE - Upper Class",
+            "color":"RED",
+            "size":"50 CM",
+            "packUoMCode":"BUNCH10",
+            "baseUoMCode":"STEM",
+            "packQuantity":9,
+            "baseQuantity":90
+         },
+         {  
+            "boxFlowerId":70,
+            "itemCode":"F100004",
+            "description":"ROSE - Upper Class",
+            "color":"RED",
+            "size":"70 CM",
+            "packUoMCode":"BUNCH10",
+            "baseUoMCode":"STEM",
+            "packQuantity":5,
+            "baseQuantity":50
          }
       ]
    };
 
 constructor() {
-  for(let i = 0; i<= 1; i++) {
-    this.printData.push(this.data1);
-  }
+  // for(let i = 0; i<= 500; i++) {
+  //   this.printData.push(this.data1);
+  // }
 }
   
 
@@ -826,7 +848,7 @@ ${this.printData.map((item, i) => `
    myWindow.document.write(printTemplate);
 setTimeout(() => {
   myWindow.print();
-  // myWindow.close();
+  myWindow.close();
 });
 return false;
   }
