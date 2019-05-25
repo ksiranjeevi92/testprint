@@ -742,7 +742,7 @@ ${this.printData.map((item, i) => `
 
 		<div id="barcode" style="height: 20mm;display: table;width: 100%;">
     <div style="display: table-row;width: 100%">
-    <div style="table-cell;border-spacing: 0; font-family: Arial Black;float: right;font-size: 14px">
+    <div style="table-cell;border-spacing: 0; font-family: Arial Black;font-size: 14px">
     <div style="table-column;">
     <span>${genBarcode(strRaw, 6.5, 50)}</span>
     </div>
@@ -753,8 +753,9 @@ ${this.printData.map((item, i) => `
 
     <div style="display: table-cell;overflow: hidden;border-spacing: 0;
      text-overflow: ellipsis;font-weight: bold;
-     white-space: nowrap;font-family: microsoft yahei;font-size: 16px">
-     ${item.orderReference}
+     white-space: nowrap;font-family: microsoft yahei;font-size: 13px;vertical-align: middle;
+     text-align: center;">
+     <span style="vertical-align: top: display: inline-block;transform: scaleY(2);">${item.orderReference}</span>
      </div>
 
     </div>
