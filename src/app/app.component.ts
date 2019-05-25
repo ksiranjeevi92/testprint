@@ -9,7 +9,9 @@ export class AppComponent  {
 
   codeType = '';
 
-   printData = [  
+  printData = [];
+
+   data = [  
    {  
       "boxId":2,
       "boxCode":"BPLUNRMI000002",
@@ -579,6 +581,52 @@ export class AppComponent  {
       ]
    }
 ];
+
+data1 =  {  
+      "boxId":33,
+      "boxCode":"BPLUNRUD000033",
+      "totalPackQuantity":14,
+      "totalBaseQuantity":140,
+      "orderReference":"AFRID1020",
+      "boxStatus":1,
+      "growerCode":"BPL",
+      "dayStamp":null,
+      "boxType":"",
+      "inwardUnloadTransactionId":0,
+      "inwardQCTransactionId":0,
+      "inwardReceiptTransactionId":0,
+      "isExcessBox":false,
+      "flowers":[  
+         {  
+            "boxFlowerId":71,
+            "itemCode":"F100002",
+            "description":"ROSE - Upper Class",
+            "color":"RED",
+            "size":"50 CM",
+            "packUoMCode":"BUNCH10",
+            "baseUoMCode":"STEM",
+            "packQuantity":9,
+            "baseQuantity":90
+         },
+         {  
+            "boxFlowerId":70,
+            "itemCode":"F100004",
+            "description":"ROSE - Upper Class",
+            "color":"RED",
+            "size":"70 CM",
+            "packUoMCode":"BUNCH10",
+            "baseUoMCode":"STEM",
+            "packQuantity":5,
+            "baseQuantity":50
+         }
+      ]
+   };
+
+constructor() {
+  for(let i = 0; i<= 1000; i++) {
+    this.printData.push(this.data1);
+  }
+}
   
 
   print() {
@@ -715,6 +763,7 @@ function funcCode128B(strText) {
         margin-bottom: 4mm;
         padding: 0;
         height: 42mm;
+        margin-left: 4mm !important;
       }
 	</style>
   <script>
@@ -729,7 +778,7 @@ ${this.printData.map((item, i) => `
 		<div id="header" style="height: 22mm;display: table; width: 100%">
       ${item.flowers.map((item2, i) => `
        <div style="display: table-row;overflow: hidden; text-overflow: ellipsis;
-       white-space: nowrap;font-family: Arial, Helvetica, sans-serif;font-size: 12px">
+       white-space: nowrap;font-family: Arial, Helvetica, sans-serif;font-size: 13px">
        <div style="display: table-cell;width: 20%">${item2.baseUoMCode}</div>
        <div style="display: table-cell;width: 65%">${item2.description}</div>
        <div style="display: table-cell;width: 15%">${item2.color}</div>
@@ -742,20 +791,21 @@ ${this.printData.map((item, i) => `
 
 		<div id="barcode" style="height: 20mm;display: table;width: 100%;">
     <div style="display: table-row;width: 100%">
-    <div style="table-cell;border-spacing: 0; font-family: Arial Black;font-size: 14px">
+    <div style="table-cell;">
     <div style="table-column;">
-    <span>${genBarcode(strRaw, 6.5, 50)}</span>
+    <span>${genBarcode(strRaw, 6, 50)}</span>
     </div>
     <div style="table-column">
-    <span>${item.boxCode}</span>
+    <span style="letter-spacing: 0.2rem;text-align: center;font-size: 18px;font-family: Arial Black">${item.boxCode}</span>
     </div>
     </div>
 
     <div style="display: table-cell;overflow: hidden;border-spacing: 0;
      text-overflow: ellipsis;font-weight: bold;
-     white-space: nowrap;font-family: microsoft yahei;font-size: 13px;vertical-align: middle;
-     text-align: center;">
-     <span style="vertical-align: top: display: inline-block;transform: scaleY(2);">${item.orderReference}</span>
+     white-space: nowrap;font-family: Arial Black;vertical-align: middle;
+     text-align: center;letter-spacing: 0; transform: scaleY(1.4)">
+     <span style="vertical-align: top;font-size: 16px;position: relative;bottom: 8;
+        ">${item.orderReference}</span>
      </div>
 
     </div>
