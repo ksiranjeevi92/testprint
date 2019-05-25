@@ -729,7 +729,7 @@ ${this.printData.map((item, i) => `
 		<div id="header" style="height: 22mm;display: table; width: 100%">
       ${item.flowers.map((item2, i) => `
        <div style="display: table-row;overflow: hidden; text-overflow: ellipsis;
-       white-space: nowrap;font-family: Arial;">
+       white-space: nowrap;font-family: Arial, Helvetica, sans-serif;font-size: 12px">
        <div style="display: table-cell;width: 20%">${item2.baseUoMCode}</div>
        <div style="display: table-cell;width: 65%">${item2.description}</div>
        <div style="display: table-cell;width: 15%">${item2.color}</div>
@@ -742,9 +742,9 @@ ${this.printData.map((item, i) => `
 
 		<div id="barcode" style="height: 20mm;display: table;width: 100%;">
     <div style="display: table-row;width: 100%">
-    <div style="table-cell;border-spacing: 0">
-    <div style="table-column; font-family: Arial Black">
-    <span>${genBarcode(strRaw, 6, 50)}</span>
+    <div style="table-cell;border-spacing: 0; font-family: Arial Black;float: right;font-size: 18px">
+    <div style="table-column;">
+    <span>${genBarcode(strRaw, 6.5, 50)}</span>
     </div>
     <div style="table-column">
     <span>${item.boxCode}</span>
@@ -752,8 +752,8 @@ ${this.printData.map((item, i) => `
     </div>
 
     <div style="display: table-cell;overflow: hidden;border-spacing: 0;
-     text-overflow: ellipsis;
-     white-space: nowrap;font-family: microsoft yahei">
+     text-overflow: ellipsis;font-weight: bold;
+     white-space: nowrap;font-family: microsoft yahei;font-size: 32px">
      ${item.orderReference}
      </div>
 
