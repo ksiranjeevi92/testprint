@@ -14,10 +14,10 @@ export class AppComponent {
   printData = []
 
   constructor(private dataSource: DataSource) {
-    // for(let i = 0; i<= 500; i++) {
+    this.printData = this.dataSource.getbarcodeData();
+    //   for(let i = 0; i<= 1000; i++) {
     //   this.printData.push(this.data1);
     // }
-    this.printData = this.dataSource.getbarcodeData();
   }
 
 
@@ -127,8 +127,8 @@ export class AppComponent {
       @media print{
         body {
           margin-top:0 !important;
-           margin-right: 4mm;
-           margin-left: 4mm;
+           margin-right: 2mm;
+           margin-left: 2mm;
            }
       @page {
         margin: 0;
@@ -140,7 +140,7 @@ export class AppComponent {
         margin-bottom: 4mm;
         padding: 0;
         height: 42mm;
-        margin-left: 4mm !important;
+        margin-left: 0 !important;
       }
 	</style>
   <script>
@@ -150,45 +150,52 @@ export class AppComponent {
 <body>
 ${this.printData.map((item, i) => `
   ${funcCode128B(item.boxCode)}
-     	<div id="container" class="container" style="width: 92mm;">
+     	<div id="container" class="container" style="width: 96mm;">
   
-		<div id="header" style="height: 22mm;display: table; width: 346px;border-spacing: 4px">
+		<div id="header" style="height: 22mm;display: table; width: 362px;border-spacing: 4px;">
       ${item.flowers.map((item2, i) => `
        <div style="max-height: 21mm;display: table-row;font-family: Arial, Helvetica, sans-serif;font-size: 13px;white-space: nowrap">
-       <div style="display: table-cell;max-width: 70px;overflow: hidden; text-overflow: ellipsis;
-       white-space: nowrap">${item2.baseUoMCode}</div>
-       <div style="display: table-cell;max-width: 150px;overflow: hidden;white-space: nowrap">${item2.description}</div>
-       <div style="display: table-cell;max-width: 90px;overflow: hidden; text-overflow: ellipsis;
-       white-space: nowrap">${item2.color}</div>
-       <div style="display: table-cell; max-width: 37px;overflow: hidden; text-overflow: ellipsis;
-       white-space: nowrap">${item2.size}</div>
+       <div style="display: table-cell;max-width: 45px;overflow: hidden; 
+       white-space: nowrap">
+       <span style="display: flex;flex-direction: row;justify-content: flex-end;">${item2.baseQuantity}</span>
+       </div>
+       <div style="display: table-cell;max-width: 202px;overflow: hidden;white-space: nowrap;text-align: center;">${item2.description}</div>
+       <div style="display: table-cell;max-width: 75px;overflow: hidden; 
+       white-space: nowrap;text-align: center">${item2.color}</div>
+       <div style="display: table-cell; max-width: 40px;overflow: hidden; 
+       white-space: nowrap;text-align: center">${item2.size}</div>
        </div>
       `.trim()).join('')}
     </div>
 
-
-
-		<div id="barcode" style="height: 20mm;display: table;width: 100%;">
-    <div style="display: table-row;width: 100%">
-    <div style="table-cell;">
-    <div style="table-column;">
+    
+	<div id="barcode" style="height: 20mm;display: table;width: 362px">
+    <div style="display: table-row;width: 362px">
+    <div style="table-cell;max-width: 242px;">
+    <div style="table-column;text-align: right">
     <span>${genBarcode(strRaw, 6, 50)}</span>
     </div>
-    <div style="table-column">
-    <span style="letter-spacing: 0.2rem;text-align: center;font-size: 18px;font-family: Arial Black">${item.boxCode}</span>
+    <div style="table-column;text-align: right;margin-left: 2px;">
+    <span style="letter-spacing: 3px;
+    font-size: 18px;
+    font-family: Arial Black">
+    ${item.boxCode}
+    </span>
     </div>
     </div>
 
-    <div style="display: table-cell;overflow: hidden;border-spacing: 0;
-     text-overflow: ellipsis;font-weight: bold;
+    <div 
+    style="display: table-cell;overflow: hidden;border-spacing: 0;
+     font-weight: bold;max-width: 116px;padding-left: 2px;
      white-space: nowrap;font-family: Arial Black;vertical-align: middle;
-     text-align: center;letter-spacing: 0; transform: scaleY(1.4)">
+     text-align: left;letter-spacing: 0; transform: scaleY(1.4);">
      <span style="vertical-align: top;font-size: 16px;position: relative;bottom: 8
         ">${item.orderReference}</span>
      </div>
 
     </div>
     </div>
+	
 	
 	
 	</div>

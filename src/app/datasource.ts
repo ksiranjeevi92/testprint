@@ -1,6 +1,46 @@
 import {Injectable} from '@angular/core';
 @Injectable({providedIn: 'root'})
 export class DataSource{
+
+  data1 =    {
+      "boxId":33,
+      "boxCode":"BPLUNRUD000033",
+      "totalPackQuantity":14,
+      "totalBaseQuantity":140,
+      "orderReference":"AFRID1020",
+      "boxStatus":1,
+      "growerCode":"BPL",
+      "dayStamp":null,
+      "boxType":"",
+      "inwardUnloadTransactionId":0,
+      "inwardQCTransactionId":0,
+      "inwardReceiptTransactionId":0,
+      "isExcessBox":false,
+      "flowers":[
+         {
+            "boxFlowerId":71,
+            "itemCode":"F100002",
+            "description":"ROSE - Upper Class",
+            "color":"TRipple Green",
+            "size":"50 CM",
+            "packUoMCode":"BUNCH10",
+            "baseUoMCode":"STEM",
+            "packQuantity":9,
+            "baseQuantity":90
+         },
+         {
+            "boxFlowerId":70,
+            "itemCode":"F100004",
+            "description":"ROSE - Upper Class",
+            "color":"RED",
+            "size":"200 CM",
+            "packUoMCode":"BUNCH10",
+            "baseUoMCode":"STEM",
+            "packQuantity":5,
+            "baseQuantity":50
+         }
+      ]
+   }
   getbarcodeData() {
     return [
    {
@@ -22,8 +62,8 @@ export class DataSource{
             "boxFlowerId":2,
             "itemCode":"F100001",
             "description":"ROSE - Upper Class",
-            "color":"RED",
-            "size":"40 CM",
+            "color":"Tripple Green",
+            "size":"10 CM",
             "packUoMCode":"BUNCH10",
             "baseUoMCode":"STEM",
             "packQuantity":10,
@@ -166,7 +206,7 @@ export class DataSource{
          {
             "boxFlowerId":33,
             "itemCode":"F100002",
-            "description":"ROSE - Upper Class ROSE",
+            "description":"ROSE - Upper Class",
             "color":"RED",
             "size":"50 CM",
             "packUoMCode":"BUNCH10",
@@ -184,7 +224,9 @@ export class DataSource{
             "baseUoMCode":"STEM",
             "packQuantity":40,
             "baseQuantity":400
-         }
+         },
+      
+
          
       ]
    },
@@ -575,7 +617,9 @@ export class DataSource{
 ]
   }
 
+
+
   getQrCodeData() {
-    return
+    return 
   }
 }
