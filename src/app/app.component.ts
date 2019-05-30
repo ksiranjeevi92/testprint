@@ -126,7 +126,7 @@ export class AppComponent {
 	<style>
       @media print{
         body {
-          margin-top:0 !important;
+           margin-top:0 !important;
            margin-right: 2mm;
            margin-left: 2mm;
            }
