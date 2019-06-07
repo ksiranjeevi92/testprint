@@ -171,7 +171,7 @@ ${this.printData.map((item, i) => `
     
 	<div id="barcode" style="height: 20mm;display: table;width: 362px">
     <div style="display: table-row;width: 362px">
-    <div style="table-cell;max-width: 242px;background: red">
+    <div style="table-cell;max-width: 242px;">
     <div style="table-column;text-align: right">
     <span>${genBarcode(strRaw, 6, 50)}</span>
     </div>
@@ -186,7 +186,7 @@ ${this.printData.map((item, i) => `
 
     <div 
     style="display: table-cell;overflow: hidden;border-spacing: 0;
-     font-weight: bold;max-width: 116px;padding-left: 2px;background: yellow;
+     font-weight: bold;max-width: 116px;padding-left: 2px;
      white-space: nowrap;font-family: Arial Black;vertical-align: middle;
      text-align: left;letter-spacing: 0; transform: scaleY(1.4);">
      <span style="vertical-align: top;font-size: 16px;position: relative;bottom: 8
