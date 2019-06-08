@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule, MatSelectModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -15,7 +16,8 @@ import { HelloComponent } from './hello.component';
         FormsModule,
         MatFormFieldModule,
         MatSelectModule,
-        MatButtonModule
+        MatButtonModule,
+        HttpClientModule
         
          ],
   declarations: [ AppComponent, HelloComponent ],

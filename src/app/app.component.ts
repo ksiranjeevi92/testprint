@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataSource } from './datasource';
+import {PrinterService} from './printer.service';
 
 @Component({
   selector: 'my-app',
@@ -13,11 +14,14 @@ export class AppComponent {
 
   printData = []
 
-  constructor(private dataSource: DataSource) {
+  constructor(private dataSource: DataSource, private printerService: PrinterService) {
     this.printData = this.dataSource.getbarcodeData();
     //   for(let i = 0; i<= 1000; i++) {
     //   this.printData.push(this.data1);
     // }
+    this.printerService.getPrinters().subscribe((data) => {
+      console.log(data);
+    })
   }
 
 
@@ -208,12 +212,23 @@ ${this.printData.map((item, i) => `
 `;
     }
 
-    var myWindow = window.open("", "BarCode Print");
-    myWindow.document.write(printTemplate);
+    // var myWindow = window.open("", "BarCode Print");
+    // myWindow.document.write(printTemplate);
     setTimeout(() => {
       // myWindow.print();
       // myWindow.close();
     });
-    return false;
+    // return false;
+    var data = [{
+      type: 'html',
+      format: 'plain',
+      data: printTemplate
+    }]
+    data[0].data = printTemplate;
+    this.onPrint(data);
+  }
+
+  onPrint(data) {
+     this.printerService.printHTML('Honeywell PC42t (203 dpi) - ESim', data);
   }
 }
