@@ -26,7 +26,7 @@ export class DataSource{
             "packUoMCode":"BUNCH10",
             "baseUoMCode":"STEM",
             "packQuantity":9,
-            "baseQuantity":90
+            "baseQuantity":900
          },
          {
             "boxFlowerId":70,
@@ -37,7 +37,7 @@ export class DataSource{
             "packUoMCode":"BUNCH10",
             "baseUoMCode":"STEM",
             "packQuantity":5,
-            "baseQuantity":50
+            "baseQuantity":5
          },
           {
             "boxFlowerId":70,
@@ -48,7 +48,7 @@ export class DataSource{
             "packUoMCode":"BUNCH10",
             "baseUoMCode":"STEM",
             "packQuantity":5,
-            "baseQuantity":50
+            "baseQuantity":500
          },
           {
             "boxFlowerId":70,

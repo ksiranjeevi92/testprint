@@ -15,10 +15,10 @@ export class AppComponent {
   printData = []
 
   constructor(private dataSource: DataSource, private printerService: PrinterService) {
-    // this.printData = this.dataSource.getbarcodeData();
-      for(let i = 0; i<= 2; i++) {
-      this.printData.push(this.dataSource.data1);
-    }
+    this.printData = this.dataSource.getbarcodeData();
+    //   for(let i = 0; i<= 2; i++) {
+    //   this.printData.push(this.dataSource.data1);
+    // }
     this.printerService.getPrinters().subscribe((data) => {
       console.log(data);
     })
@@ -327,8 +327,8 @@ ${this.printData.map((item, i) => `
 `
     }
 
-    // var myWindow = window.open("", "BarCode Print");
-    // myWindow.document.write(printTemplate);
+    var myWindow = window.open("", "BarCode Print");
+    myWindow.document.write(printTemplate);
     // setTimeout(() => {
       // myWindow.print();
       // myWindow.close();
@@ -340,7 +340,7 @@ ${this.printData.map((item, i) => `
       data: printTemplate
     }]
     data[0].data = printTemplate;
-    this.onPrint(data);
+    // this.onPrint(data);
   }
 
   onPrint(data) {
