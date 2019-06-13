@@ -255,15 +255,31 @@ ${this.printData.map((item, i) => `
                <div style="max-height: 24mm;display: table-row;font-family: Arial, Helvetica, sans-serif;font-size: 13px;white-space: nowrap">
                   <div style="display: table-cell;max-width: 45px;overflow: hidden; 
                       white-space: nowrap">
-                         <span style="display: flex;flex-direction: row;justify-content: flex-end;">${item2.baseQuantity}</span>
+                       <span style="display: flex;flex-direction: row;justify-content: flex-end">
+                          <span></span>
+                          <span style="justify-content: flex-end">${item2.baseQuantity}</span>
+                        </span>
                       </div>
-                      <div style="display: table-cell;max-width: 202px;overflow: hidden;white-space: nowrap;text-align: center;">
-                        <span style="display: flex;flex-direction-row;">${item2.description}</span>
+                      <div style="display: table-cell;max-width: 217px;overflow: hidden;white-space: nowrap;">
+                        <span style="display: flex;flex-direction: row">
+                           <span style="width: 22"></span>
+                           <span style="width: 195">${item2.description}</span>
+                        </span>
                       </div>
-                      <div style="display: table-cell;max-width: 75px;overflow: hidden; 
-                      white-space: nowrap;text-align: center">${item2.color}</div>
-                      <div style="display: table-cell; max-width: 40px;overflow: hidden; 
-                      white-space: nowrap;text-align: center">${item2.size}</div>
+                      <div style="display: table-cell;width:50px;max-width: 50px;overflow: hidden; 
+                      white-space: nowrap">
+                        <span style="display: flex;flex-direction: row">
+                         <span style="width: 10px"></span>
+                         <span style="width: 40px;text-align: left">${item2.color}</span>
+                        </span>
+                      </div>
+                      <div style="display: table-cell;width: 50px; max-width: 50px;overflow: hidden; 
+                      white-space: nowrap;text-align: center">
+                        <span style="display: flex;flex-direction: row;justify-content: flex-end">
+                          <span></span>
+                          <span style="justify-content: flex-end">${item2.size}</span>
+                        </span>
+                      </div>
                </div>
                 `.trim()).join('')}
             </div>
@@ -310,8 +326,8 @@ ${this.printData.map((item, i) => `
 `
     }
 
-    var myWindow = window.open("", "BarCode Print");
-    myWindow.document.write(printTemplate);
+    // var myWindow = window.open("", "BarCode Print");
+    // myWindow.document.write(printTemplate);
     // setTimeout(() => {
       // myWindow.print();
       // myWindow.close();
@@ -323,7 +339,7 @@ ${this.printData.map((item, i) => `
       data: printTemplate
     }]
     data[0].data = printTemplate;
-    // this.onPrint(data);
+    this.onPrint(data);
   }
 
   onPrint(data) {
