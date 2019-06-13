@@ -37,6 +37,28 @@ export class DataSource{
             "packUoMCode":"BUNCH10",
             "baseUoMCode":"STEM",
             "packQuantity":5,
+            "baseQuantity":500
+         },
+          {
+            "boxFlowerId":70,
+            "itemCode":"F100004",
+            "description":"ROSE - Upper Class",
+            "color":"RED",
+            "size":"200 CM",
+            "packUoMCode":"BUNCH10",
+            "baseUoMCode":"STEM",
+            "packQuantity":5,
+            "baseQuantity":50
+         },
+          {
+            "boxFlowerId":70,
+            "itemCode":"F100004",
+            "description":"ROSE - Upper Class",
+            "color":"RED",
+            "size":"200 CM",
+            "packUoMCode":"BUNCH10",
+            "baseUoMCode":"STEM",
+            "packQuantity":5,
             "baseQuantity":50
          }
       ]

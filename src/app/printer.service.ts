@@ -89,7 +89,11 @@ export class PrinterService {
   printHTML(printerName, htmlData) {
 		qz.printers.find(printerName).then(function(found) {
 			console.log("Printer: " + found);
-			var config = qz.configs.create(printerName);
+			var config = qz.configs.create(printerName, {
+     units: 'mm', 
+     size: {width: 105, height: 50},
+     scaleContent: 'false',
+     rasterize: 'false' });
 			
 			qz.print(config, htmlData).then(function() {
 				console.log("Sent data to printer");
