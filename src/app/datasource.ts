@@ -7,7 +7,7 @@ export class DataSource{
       "boxCode":"BPLUNRUD000033",
       "totalPackQuantity":14,
       "totalBaseQuantity":140,
-      "orderReference":"AFRID1020",
+      "orderReference":"AFRID10200",
       "boxStatus":1,
       "growerCode":"BPL",
       "dayStamp":null,
@@ -37,7 +37,7 @@ export class DataSource{
             "packUoMCode":"BUNCH10",
             "baseUoMCode":"STEM",
             "packQuantity":5,
-            "baseQuantity":500
+            "baseQuantity":50
          },
           {
             "boxFlowerId":70,

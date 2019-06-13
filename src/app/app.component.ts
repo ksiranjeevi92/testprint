@@ -300,11 +300,12 @@ ${this.printData.map((item, i) => `
                           </div>
                      </div>
                       
-                       <div style="display: table-cell;overflow: hidden;border-spacing: 0;font-weight: bold;max-width: 116px;padding-left: 2px;white-space: nowrap;font-family: Arial Black;vertical-align: middle;
-                      text-align: left;letter-spacing: 0; transform:scaleY ">
-                         <span style="vertical-align: top;font-size: 17px;position: relative;bottom: 12">
-                         ${item.orderReference}
-                         </span>
+                       <div style="display: table-cell;overflow: hidden;border-spacing: 0;font-weight: bold;max-width: 116px;padding-left: 2px;white-space: nowrap;font-family: Arial Black;
+                      text-align: left;letter-spacing: 0; width: 116px;transform:scaleY ">
+                        <span style="display: flex;flex-direction: row;position: relative>
+                          <span style="width: 16px"><span>
+                          <span style="font-size: 17px;width: 100px;position: relative;bottom: 20"> ${item.orderReference}</span>
+                        </span>
                      </div>
 
 
