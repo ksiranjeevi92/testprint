@@ -246,7 +246,7 @@ printTemplate = `
 <body>
 ${this.printData.map((item, i) => `
   ${funcCode128B(item.boxCode)}
-    <div id="container" class="container">
+    <div id="container" class="container" style="position: relative">
        <div style="width: 96mm;margin-righ: 2mm;margin-left: 2mm;height: 50mm">
 
           <div id="header" style="height: 27mm;">
@@ -285,7 +285,7 @@ ${this.printData.map((item, i) => `
             </div>
           </div>
       
-          <div id="barcode" style="height: 23mm;">
+          <div id="barcode" style="height: 23mm;position: relative">
               <div style="height: 22mm;display: table;width: 362px;padding-top: 1mm">
                  <div style="display: table-row;width: 362px">
                     
@@ -304,11 +304,11 @@ ${this.printData.map((item, i) => `
                       text-align: left;letter-spacing: 0; width: 116px;transform:scaleY ">
                         <span style="display: flex;flex-direction: row;position: relative>
                           <span style="width: 16px"><span>
-                          <span style="font-size: 17px;width: 100px;position: relative;bottom: 20"> ${item.orderReference}</span>
+                          <span style="font-size: 17px;width: 100px;position: relative;bottom: 20"> ${item.orderReference}
+                          </span>                      
                         </span>
-                     </div>
-
-
+                              <strong style="text-align: end;bottom: 0;text-align: end;display: flex;flex:1;position:relative;font-size: 9px;top:2rem;justify-content: center;align-items: flex-end;position: absolute">BTC</strong>
+                     </div>                   
                  </div>
               </div>
                  
